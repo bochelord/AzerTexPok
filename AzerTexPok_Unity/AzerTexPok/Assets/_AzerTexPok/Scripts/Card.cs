@@ -8,7 +8,7 @@ public enum Value { two, three, four, five, six, seven, eight, nine, ten, jack, 
 public enum Color { hearts, diamonds, spades, clubs }
 
 [Serializable]
-public class Card : IComparable
+public class Card : MonoBehaviour, IComparable
 {
 
 
@@ -18,7 +18,7 @@ public class Card : IComparable
 
     /// <summary>
     /// Icomparable interface
-    /// </summary>
+    /// </summary> 
     /// <param name="obj">object to compare</param>
     /// <returns>-1 < obj, 0 = obj, 1 > obj </returns>
     public int CompareTo(object obj)

@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 811f08321bfc9e344beccf4b5ae00b3a, type: 3}
-  m_Name: Card_SO
+  m_Name: Card_SO_heartsQueen
   m_EditorClassIdentifier: 
-  cardImage: {fileID: 0}
-  cardName: 
-  cardValue: 0
+  cardSprite: {fileID: 21300000, guid: 951d1e34fc77adc4093ccebf565b3442, type: 3}
+  card:
+    cardValue: 10
+    cardColor: 0

@@ -8,7 +8,7 @@ using System;
 public class Card_SO : ScriptableObject
 {
 
-    public Image cardImage;
+    public Sprite cardSprite;
 
     public Card card;
 
