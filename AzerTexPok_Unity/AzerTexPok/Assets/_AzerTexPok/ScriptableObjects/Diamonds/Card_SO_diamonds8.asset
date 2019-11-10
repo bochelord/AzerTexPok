@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: Card_SO_diamonds8
   m_EditorClassIdentifier: 
   cardSprite: {fileID: 21300000, guid: 3f01a8cba27fc7843b70add39ddd8b8a, type: 3}
-  card:
-    cardValue: 6
-    cardColor: 1
+  cardValue: 6
+  cardColor: 1

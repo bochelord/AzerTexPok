@@ -4,14 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
+public enum CardValue { two, three, four, five, six, seven, eight, nine, ten, jack, queen, king, ace };
+public enum CardColor { hearts, diamonds, spades, clubs }
+
 [Serializable]
 public class Card_SO : ScriptableObject
 {
-
-    public Sprite cardSprite;
-
-    public Card card;
-
+    
+    public Sprite cardSprite;   
+    public CardValue cardValue;
+    public CardColor cardColor;
 
 
 }

@@ -4,8 +4,7 @@ using UnityEngine;
 using System.Linq;
 using System;
 
-public enum Value { two, three, four, five, six, seven, eight, nine, ten, jack, queen, king, ace };
-public enum Color { hearts, diamonds, spades, clubs }
+
 
 [Serializable]
 public class Card : MonoBehaviour, IComparable
@@ -13,8 +12,8 @@ public class Card : MonoBehaviour, IComparable
 
 
 
-    public Value cardValue;
-    public Color cardColor;
+    public CardValue cardValue;
+    public CardColor cardColor;
 
     /// <summary>
     /// Icomparable interface

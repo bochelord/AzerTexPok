@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: Card_SO_clubsJack
   m_EditorClassIdentifier: 
   cardSprite: {fileID: 21300000, guid: bff2876eeb83ced439a6e87767d7499e, type: 3}
-  card:
-    cardValue: 9
-    cardColor: 3
+  cardValue: 9
+  cardColor: 3

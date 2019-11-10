@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: Card_SO_hearts10
   m_EditorClassIdentifier: 
   cardSprite: {fileID: 21300000, guid: 0378695db5fb8d044948792b895670d2, type: 3}
-  card:
-    cardValue: 8
-    cardColor: 0
+  cardValue: 8
+  cardColor: 0

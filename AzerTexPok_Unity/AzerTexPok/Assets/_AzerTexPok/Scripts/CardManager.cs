@@ -9,75 +9,124 @@ public class CardManager : MonoBehaviour
     public Sprite cardBackSprite;
     public List<Card_SO> listofCards;
 
-    public List<Card_SO> hand;
-
+    public List<GameObject> hand_prefabs;
+    public List<Card> hand_cards;
 
     public GameObject cardPrefab;
     public GameObject placeholderHand;
 
-    private List<Card_SO> deck;
-    private int offset_card = 5;
+    public int offset_card = 5;
+
+
+    #region cached variables
+
+    private int num_hand = 0;
+    
+    private GameObject cardTempObj;
+
+    #endregion
+
 
     void Start()
     {
-
-        deck = listofCards;
-
-
-        deck.Shuffle();
-
-        DrawHand();
+        Button_StartShow();
     }
 
     
 
-
-    public void DrawHand()
+    public void Button_StartShow()
     {
 
-        hand = new List<Card_SO>();
+        hand_cards.Clear();
+        hand_prefabs.Clear();
+
+        listofCards.Shuffle();
+
+        DrawHand(num_hand++);
+
+
+        PokerHand pk = new PokerHand();
+
+
+
+        pk.setPokerHand(hand_cards.ToArray());
+        Debug.Log(pk.printResult());
+    }
+
+
+
+
+    public void DrawHand(int num_hand)
+    {
+
+        
 
         for (int i = 0; i < 5; i++)
         {
-            hand.Add(deck[i]);
+            InstantiateCard(listofCards[i],i,num_hand);
+
         }
 
-        InstantiateCards(hand);
+        
 
     }
     
 
-
-    public void InstantiateCards(List<Card_SO> in_hand)
+    private void InstantiateCard(Card_SO sO, int num_card, int num_hand)
     {
 
-        for (int i = 0; i < in_hand.Count; i++)
-        {
 
-            GameObject cardtemp = Instantiate(cardPrefab, new Vector3(placeholderHand.transform.position.x, placeholderHand.transform.position.y + (offset_card * i), 0), Quaternion.identity, placeholderHand.transform);
+        cardTempObj = Instantiate(cardPrefab, new Vector3(placeholderHand.transform.position.x + (offset_card * num_card), placeholderHand.transform.position.y - (2 * offset_card * num_hand), 0), Quaternion.identity, placeholderHand.transform);
 
-            if (cardtemp == null)
-            {
-                Debug.Log("WTFUCK?");
-            }
+        
 
-            if (in_hand[i] == null)
-            {
-                Debug.Log("WTF inhand?");
-            }
+        cardTempObj.GetComponent<Card>().cardValue = sO.cardValue;
+        cardTempObj.GetComponent<Card>().cardColor = sO.cardColor;
+        cardTempObj.name = sO.cardValue.ToString() + sO.cardColor.ToString();
+        cardTempObj.transform.GetChild(1).GetComponent<Image>().sprite = sO.cardSprite;
 
-            cardtemp.GetComponent<Card>().cardValue = in_hand[i].card.cardValue;
-            cardtemp.GetComponent<Card>().cardColor = in_hand[i].card.cardColor;
-
-            cardtemp.transform.GetChild(1).GetComponent<Image>().sprite = in_hand[i].cardSprite;
+        hand_prefabs.Add(cardTempObj);
+        hand_cards.Add(cardTempObj.GetComponent<Card>());
+    }
 
 
 
-        }
+    //public void InstantiateCards(List<Card_SO> in_hand)
+    //{
+
+    //    for (int i = 0; i < in_hand.Count; i++)
+    //    {
+
+    //        GameObject cardtemp = Instantiate(cardPrefab, new Vector3(placeholderHand.transform.position.x, placeholderHand.transform.position.y + (offset_card * i), 0), Quaternion.identity, placeholderHand.transform);
+
+    //        if (cardtemp == null)
+    //        {
+    //            Debug.Log("WTFUCK?");
+    //        }
+
+    //        if (cardtemp.GetComponent<Card>() == null)
+    //        {
+    //            Debug.Log("WTFUCK? component");
+    //        }
+
+
+    //        if (in_hand[i].card == null)
+    //        {
+    //            Debug.Log("WTF inhand?");
+    //        }
+
+    //        cardtemp.GetComponent<Card>().cardValue = in_hand[i].card.cardValue;
+    //        cardtemp.GetComponent<Card>().cardColor = in_hand[i].card.cardColor;
+
+    //        cardtemp.transform.GetChild(1).GetComponent<Image>().sprite = in_hand[i].cardSprite;
+
+
+
+    //    }
 
 
         
-    }
+    //}
 
 
 }

@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: Card_SO_clubsQueen
   m_EditorClassIdentifier: 
   cardSprite: {fileID: 21300000, guid: a1e9d890525deab4cbecb143fd77db63, type: 3}
-  card:
-    cardValue: 10
-    cardColor: 3
+  cardValue: 10
+  cardColor: 3
