@@ -25,3 +25,22 @@ Poker card graphics: https://cdn-files-live.gop3.nl/resources_unitytest/poker_ca
 
 You are free to give your interpretation of any of the aspects that are not explicitly detailed
 above. These assumptions shall be detailed together with the implementation.
+
+
+
+# Documentation
+
+Code Structure:
+
+- Created SO for each card (Based on ScriptableObjectFactory.cs using Editor option created with ScriptableObjectWindow)
+
+  - Created system to build a SO inside Unity Editor (it can be done automatically if the assets are tagged/named with a normalized format)
+  - In this case I received the assets as card_suit0_value00, etc... 
+
+   - One can always create a script to read these files and based on its name, parse it and create automatically each Scriptable Object for each card on the set.
+   - In this case I made it manually since the amount of cards is not going to change( as opposed to a Collectible Card Game for example)
+
+If the art would change, it's just a matter of rewriting such script to allow updating the sprite on each SO.
+
+
+
