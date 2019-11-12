@@ -30,17 +30,37 @@ above. These assumptions shall be detailed together with the implementation.
 
 # Documentation
 
+
+Usage:
+
+- Button Draw Board will draw 3 cards and then 2 more consecutive
+- Button Draw Player Cards will draw 2 cards for each 4 players and will show a button to check any combination
+- Button check will present the combination possible with the cards on the board and the ones in the hand selected and it will give a 	strentgh based on the power of the pokerhand.
+
+
 Code Structure:
 
-- Created SO for each card (Based on ScriptableObjectFactory.cs using Editor option created with ScriptableObjectWindow)
 
-  - Created system to build a SO inside Unity Editor (it can be done automatically if the assets are tagged/named with a normalized format)
-  - In this case I received the assets as card_suit0_value00, etc... 
+- Scriptable Objects
+	- Created SO for each card (Based on ScriptableObjectFactory.cs using Editor option created with ScriptableObjectWindow)
 
-   - One can always create a script to read these files and based on its name, parse it and create automatically each Scriptable Object for each card on the set.
-   - In this case I made it manually since the amount of cards is not going to change( as opposed to a Collectible Card Game for example)
+	- Created system to build a SO inside Unity Editor (it can be done automatically if the assets are tagged/named with a normalized format)
+	- In this case I received the assets as card_suit0_value00, etc... 
 
-If the art would change, it's just a matter of rewriting such script to allow updating the sprite on each SO.
+	- One can always create a script to read these files and based on its name, parse it and create automatically each Scriptable Object for each card on the set.
+	- In this case I made it manually since the amount of cards is not going to change( as opposed to a Collectible Card Game for example). If the art would change, it's just a matter of rewriting such script to allow updating the sprite on each SO.
+
+- There are several lists of Gameobjects and Cards to mantain the state of each player and the board of the game
+- There're several placeholders objects used as positional  places
+
+
+Things to improve:
+
+- Add Unit Tests
+- Add automatic way of creating Scriptable Objects for the cards
+- Add Asset Bundles for example, in order to update content
+- Add better UI art
+- Iterate over UI layout to improve it
 
 
 
