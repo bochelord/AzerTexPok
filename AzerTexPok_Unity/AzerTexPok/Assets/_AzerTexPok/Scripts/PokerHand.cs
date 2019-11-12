@@ -61,43 +61,43 @@ public class PokerHand
 
         if (this.RYL_FLUSH)
         {
-            return "Royal Flush";
+            return "Royal Flush" + "- Strength:" + this.strength;
         }
         else if (this.STRAIGHT_FLUSH)
         {
-            return "Straight Flush";
+            return "Straight Flush" + "- Strength:" + this.strength;
         }
         else if (this.FOUR_A_KIND)
         {
-            return "Four of a kind";
+            return "Four of a kind" + "- Strength:" + this.strength;
         }
         else if (this.FULL_HOUSE)
         {
-            return "Full house";
+            return "Full house" + "- Strength:" + this.strength;
         }
         else if (this.FLUSH)
         {
-            return "Flush";
+            return "Flush" + "- Strength:" + this.strength;
         }
         else if (this.STRAIGHT)
         {
-            return "Straight";
+            return "Straight" + "- Strength:" + this.strength;
         }
         else if (this.THREE_A_KIND)
         {
-            return "Three of a kind";
+            return "Three of a kind" + "- Strength:" + this.strength;
         }
         else if (this.TWO_PAIR)
         {
-            return "Two Pair";
+            return "Two Pair" + "- Strength:" + this.strength;
         }
         else if (this.PAIR)
         {
-            return "Pair";
+            return "Pair" + "- Strength:" + this.strength;
         }
         else if (this.HIGH_CARD)
         {
-            return "High card";
+            return "High card" + "- Strength:" + this.strength;
         }
         else
             return "error setting hand.";
